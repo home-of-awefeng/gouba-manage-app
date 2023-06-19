@@ -1,44 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/models/grid_list_item.dart';
-import 'package:shop_app/navigation/routes.dart';
+import 'package:shop_app/mvvm/view_model_widget.dart';
+import 'package:shop_app/views/home_viewmodel.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key, required this.title});
-  final String title;
-
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  final List<GridListItem> gridList = [
-    GridListItem(
-        route: Routes.productManagement,
-        title: '商品管理'
-    ),
-    GridListItem(
-        route: Routes.orderManagement,
-        title: '订单管理'
-    ),
-    GridListItem(
-        route: Routes.resourceManagement,
-        title: '首页轮播页'
-    )
-  ];
-
-  void onTapGridItem(BuildContext context, String route) {
-    Navigator.pushNamed(context, route);
-  }
+class HomeView extends ViewModelWidget<HomeViewModel> {
+  HomeView({ Key? key }): super(HomeViewModel(), key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget render(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text(APP_NAME),
       ),
       body: GridView.builder(
-        itemCount: gridList.length,
+        itemCount: viewModel.gridList.length,
         padding: const EdgeInsets.all(16),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -46,11 +23,11 @@ class _HomeViewState extends State<HomeView> {
           crossAxisSpacing: 16,
         ),
         itemBuilder: (BuildContext context, int index) {
-          GridListItem item = gridList[index];
+          GridListItem item = viewModel.gridList[index];
           return Card(
               child:
               InkWell(
-                onTap: () => onTapGridItem(context, item.route),
+                onTap: () => viewModel.onTapGridItem(context, item.route),
                 child: Padding(
                   padding: const EdgeInsets.all(6),
                   child: Center(

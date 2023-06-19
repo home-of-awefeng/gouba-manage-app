@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/navigation/routes.dart';
 import 'package:shop_app/views/home_view.dart';
-import 'package:shop_app/views/order-management/order_management_view.dart';
-import 'package:shop_app/views/product-management/product_management_view.dart';
-import 'package:shop_app/views/resource-management/resource_management_view.dart';
+import 'package:shop_app/views/order_management/order_management_view.dart';
+import 'package:shop_app/views/product_management/product_management_view.dart';
+import 'package:shop_app/views/resource_management/resource_management_view.dart';
 
 
 void main() {
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        Routes.productManagement: (context) => const ProductManagementView(title: 'ProductManagementView'),
-        Routes.orderManagement: (context) => const OrderManagementView(title: 'OrderManagementView'),
-        Routes.resourceManagement: (context) => const ResourceManagementView(title: 'ResourceManagementView'),
-        Routes.root: (context) => const HomeView(title: 'Gouba Manage App')
+        Routes.productManagement: (context) => ProductManagementView(),
+        Routes.orderManagement: (context) => OrderManagementView(),
+        Routes.resourceManagement: (context) => ResourceManagementView(),
+        Routes.root: (context) => HomeView()
       },
     );
   }
