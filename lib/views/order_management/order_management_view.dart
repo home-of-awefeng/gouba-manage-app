@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/mvvm/view_model_widget.dart';
 import 'package:shop_app/views/order_management/order_management_viewmodel.dart';
 
@@ -10,7 +11,7 @@ class OrderManagementView extends ViewModelWidget<OrderManagementViewModel> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('OrderManagementView'),
+        title: const Text(ORDER_PAGE_NAME),
       ),
       body: const Center(
         child: Column(

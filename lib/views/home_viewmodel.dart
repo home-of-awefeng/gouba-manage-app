@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/models/grid_list_item.dart';
 import 'package:shop_app/mvvm/base_view_model.dart';
 import 'package:shop_app/navigation/routes.dart';
@@ -7,15 +8,15 @@ class HomeViewModel extends BaseViewModel {
   final List<GridListItem> _gridList = [
     GridListItem(
         route: Routes.productManagement,
-        title: '商品管理'
+        title: PRODUCT_PAGE_NAME
     ),
     GridListItem(
         route: Routes.orderManagement,
-        title: '订单管理'
+        title: ORDER_PAGE_NAME
     ),
     GridListItem(
         route: Routes.resourceManagement,
-        title: '首页轮播页'
+        title: RESOURCE_PAGE_NAME
     )
   ];
 
