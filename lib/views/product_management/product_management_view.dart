@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/common/theme/theme.dart';
 import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/mvvm/view_model_widget.dart';
+import 'package:shop_app/views/product_management/product_list_view.dart';
 import 'package:shop_app/views/product_management/product_management_viewmodel.dart';
 
 class ProductManagementView extends ViewModelWidget<ProductManagementViewModel> {
@@ -22,15 +23,12 @@ class ProductManagementView extends ViewModelWidget<ProductManagementViewModel> 
         return Scaffold(
           appBar: AppBar(
             title: const Text(PRODUCT_PAGE_NAME),
-            iconTheme: IconThemeData(color: AppTheme.colorTWhite),
+            iconTheme: const IconThemeData(color: AppTheme.colorTWhite),
             bottom: TabBar(tabs: viewModel.tabs,),
           ),
           body: TabBarView(
             children: viewModel.tabs.map((Tab tab) {
-              return Text(
-                '${tab.text!} Tab',
-                style: Theme.of(context).textTheme.headlineSmall,
-              );
+              return ProductListView(key: tab.key);
             }).toList(),
           ),
           floatingActionButton: FloatingActionButton.extended(
