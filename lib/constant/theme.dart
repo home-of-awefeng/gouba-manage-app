@@ -1,0 +1,3 @@
+const FONT_NAME_NOTO_SANS = 'NotoSans';
+
+const TOOLTIP_SHOW_DURATION_IN_SECONDS = 3;

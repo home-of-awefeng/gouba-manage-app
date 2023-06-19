@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/common/theme/theme.dart';
 import 'package:shop_app/navigation/routes.dart';
 import 'package:shop_app/views/home_view.dart';
 import 'package:shop_app/views/order_management/order_management_view.dart';
@@ -18,10 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Gouba Manage App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.theme,
       routes: {
         Routes.productManagement: (context) => ProductManagementView(),
         Routes.orderManagement: (context) => OrderManagementView(),
