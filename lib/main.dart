@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/navigation/routes.dart';
-import 'package:shop_app/views/home-view.dart';
-import 'package:shop_app/views/order-management/order-management-view.dart';
-import 'package:shop_app/views/product-management/product-management-view.dart';
-import 'package:shop_app/views/resource-management/resource-management-view.dart';
+import 'package:shop_app/views/home_view.dart';
+import 'package:shop_app/views/order-management/order_management_view.dart';
+import 'package:shop_app/views/product-management/product_management_view.dart';
+import 'package:shop_app/views/resource-management/resource_management_view.dart';
 
 
 void main() {
