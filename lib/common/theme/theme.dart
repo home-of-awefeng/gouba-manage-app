@@ -28,7 +28,8 @@ class AppTheme {
     ),
     appBarTheme: const AppBarTheme(
         elevation: 0,
-        iconTheme: IconThemeData(color: AppTheme.colorTBlack),
+        // backgroundColor: AppTheme.colorTWhite,
+        // iconTheme: IconThemeData(color: AppTheme.colorTWhite),
         systemOverlayStyle: SystemUiOverlayStyle.dark),
     dialogTheme: const DialogTheme(
       shape: RoundedRectangleBorder(

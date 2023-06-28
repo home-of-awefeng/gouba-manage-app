@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/mvvm/base_view_model.dart';
+import 'package:shop_app/navigation/routes.dart';
 import 'package:shop_app/views/product_management/product_type.dart';
 
 class ProductManagementViewModel extends BaseViewModel {
@@ -9,6 +10,9 @@ class ProductManagementViewModel extends BaseViewModel {
     Tab(key: Key(ProductType.OTHERS.value), text: '其他'),
   ];
 
+  void onTapFloatingButton(BuildContext context) {
+    Navigator.pushNamed(context, Routes.productCreate);
+  }
 
   List<Tab> get tabs => _tabs;
 }

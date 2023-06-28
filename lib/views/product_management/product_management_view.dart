@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/common/theme/theme.dart';
 import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/mvvm/view_model_widget.dart';
 import 'package:shop_app/views/product_management/product_list_view.dart';
@@ -23,7 +22,6 @@ class ProductManagementView extends ViewModelWidget<ProductManagementViewModel> 
         return Scaffold(
           appBar: AppBar(
             title: const Text(PRODUCT_PAGE_NAME),
-            iconTheme: const IconThemeData(color: AppTheme.colorTWhite),
             bottom: TabBar(tabs: viewModel.tabs,),
           ),
           body: TabBarView(
@@ -32,7 +30,7 @@ class ProductManagementView extends ViewModelWidget<ProductManagementViewModel> 
             }).toList(),
           ),
           floatingActionButton: FloatingActionButton.extended(
-            onPressed: () => {},
+            onPressed: () => viewModel.onTapFloatingButton(context),
             label: const Text('上架'),
             icon: const Icon(Icons.add),
           ),
