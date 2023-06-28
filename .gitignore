@@ -8,13 +8,17 @@
 .buildlog/
 .history
 .svn/
+.fvm/
 migrate_working_dir/
+/web/
+
 
 # IntelliJ related
 *.iml
 *.ipr
 *.iws
 .idea/
+.gradle/
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -30,7 +34,14 @@ migrate_working_dir/
 .packages
 .pub-cache/
 .pub/
-/build/
+macos/
+web/
+windows/
+linux/
+
+
+# Web related
+
 
 # Symbolication related
 app.*.symbols
@@ -42,3 +53,25 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+## Gcc Patch
+/*.gcno
+android/.project
+android/.settings/org.eclipse.buildship.core.prefs

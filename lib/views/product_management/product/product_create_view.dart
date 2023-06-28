@@ -10,7 +10,7 @@ class ProductCreateView extends ViewModelWidget<ProductCreateViewModel> {
   Widget render(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(RESOURCE_PAGE_NAME),
+        title: const Text(PRODUCT_CREATE_PAGE_NAME),
       ),
       body: const Center(
         child: Column(
