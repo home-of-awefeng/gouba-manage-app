@@ -25,4 +25,6 @@ To generate [model].g.dart file which has toJson and fromJson implementation, pl
 3. run command ``./scripts/generate_models.sh`` in your terminal to generate ``xxx.g.dart`` file  
 
 
+### Notes
+1. should restart simulator after change themeData;
 

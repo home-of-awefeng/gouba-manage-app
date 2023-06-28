@@ -21,15 +21,14 @@ class AppTheme {
       errorBorder: inputErrorBorder,
       focusedErrorBorder: inputFocusedBorder,
     ),
-    primaryColor: AppTheme.colorTBlack,
+    primaryColor: AppTheme.colorTBlue,
     // for iOS
     cupertinoOverrideTheme: const CupertinoThemeData(
       primaryColor: AppTheme.colorTBlack,
     ),
     appBarTheme: const AppBarTheme(
         elevation: 0,
-        // backgroundColor: AppTheme.colorTWhite,
-        // iconTheme: IconThemeData(color: AppTheme.colorTWhite),
+        iconTheme: IconThemeData(color: AppTheme.colorTWhite),
         systemOverlayStyle: SystemUiOverlayStyle.dark),
     dialogTheme: const DialogTheme(
       shape: RoundedRectangleBorder(
