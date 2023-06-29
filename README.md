@@ -12,6 +12,8 @@ A new Flutter project，version: `3.10.5`
 ### dependencies
 - dependencies
   - json_annotation: ^4.8.0
+  - [wechat_assets_picker](https://github.com/fluttercandies/flutter_wechat_assets_picker/blob/main/README-ZH.md)
+  - [wechat_camera_picker](https://github.com/fluttercandies/flutter_wechat_camera_picker/blob/main/README-ZH.md)
 - dev_dependencies
   - json_serializable: ^6.7.0
   - build_runner: ^2.3.3

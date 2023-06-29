@@ -11,7 +11,7 @@ class ProductCreateViewModel extends BaseViewModel {
     final List<AssetEntity>? result = await AssetPicker.pickAssets(
       context,
       pickerConfig: const AssetPickerConfig(
-          maxAssets: 3,
+          maxAssets: 2,
           requestType: RequestType.image
       ),
     );
@@ -26,29 +26,4 @@ class ProductCreateViewModel extends BaseViewModel {
       ),
     );
   }
-
-  // void selectMultiImage() async {
-  //   List<XFile>? images = await _imagePicker.pickMultiImage();
-  //   if (images.isEmpty) imageList = images;
-  // }
-  //
-  // void selectImageCamera() async {
-  //   XFile? photo = await _imagePicker.pickImage(
-  //       source: ImageSource.camera,
-  //       preferredCameraDevice: CameraDevice.rear,
-  //   );
-  //   if (photo != null) image = photo;
-  // }
-  //
-  // void selectVideo() async {
-  //   XFile? video = await _imagePicker.pickVideo(source: ImageSource.gallery);
-  //   if (video != null) this.video = video;
-  // }
-  //
-  // void selectCameraVideo () async {
-  //   XFile? video = await _imagePicker.pickVideo(
-  //     source: ImageSource.camera,
-  //   );
-  //   if (video != null) this.video = video;
-  // }
 }

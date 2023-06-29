@@ -22,19 +22,19 @@ class ProductCreateView extends ViewModelWidget<ProductCreateViewModel> {
               child: Column(
                 children: [
                   InkWell(
-                    onTap: () => {},
+                    onTap: () => viewModel.selectImages(context),
                     child: Text("选取照片", style: AppTheme.theme.textTheme.T_H6_L),
                   ),
                   InkWell(
-                    onTap: () => {},
+                    onTap: () => viewModel.selectVideo(context),
                     child: Text("选取视频", style: AppTheme.theme.textTheme.T_H6_L),
                   ),
                   InkWell(
-                    onTap: () => {},
+                    onTap: () => viewModel.selectImages(context),
                     child: Text("拍照", style: AppTheme.theme.textTheme.T_H6_L),
                   ),
                   InkWell(
-                    onTap: () => {},
+                    onTap: () => viewModel.selectImages(context),
                     child: Text("录像", style: AppTheme.theme.textTheme.T_H6_L),
                   )
                 ],
