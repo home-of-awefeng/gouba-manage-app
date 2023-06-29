@@ -77,6 +77,10 @@ extension TextThemeExtension on TextTheme {
         fontWeight: FontWeight.w700,
       );
 
+  TextStyle get T_H6_L => T_H6.copyWith(
+    height: 48 / 16,
+  );
+
   TextStyle get T_H7 => basicTextStyle.copyWith(
         fontWeight: FontWeight.w600,
         fontSize: 20,
@@ -147,4 +151,6 @@ extension TextThemeExtension on TextTheme {
   TextStyle get T_Context_B => T_Context.copyWith(
         fontWeight: FontWeight.w700,
       );
+
+  TextStyle get T_Context_L => T_Context.copyWith(fontWeight: FontWeight.w500, height: 28 / 14);
 }
