@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/mvvm/view_model_widget.dart';
 import 'package:shop_app/views/product_management/product_list_view.dart';
-import 'package:shop_app/views/product_management/product_management_viewmodel.dart';
+import 'package:shop_app/views/product_management/product_management_view_model.dart';
 
 class ProductManagementView extends ViewModelWidget<ProductManagementViewModel> {
   ProductManagementView({ Key? key }): super(ProductManagementViewModel(), key: key);
