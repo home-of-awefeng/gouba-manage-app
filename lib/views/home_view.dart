@@ -37,7 +37,7 @@ class HomeView extends ViewModelWidget<HomeViewModel> {
                     child: Padding(
                       padding: const EdgeInsets.all(6),
                       child: Center(
-                        child: Text(item.title),
+                        child: Text(item.title, textAlign: TextAlign.center),
                       ),
                     ),
                   )

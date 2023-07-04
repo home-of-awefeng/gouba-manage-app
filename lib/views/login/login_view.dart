@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/request/admin.dart';
 import 'package:shop_app/state/global.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class LoginView extends StatelessWidget{
   LoginView({super.key});
@@ -11,7 +11,6 @@ class LoginView extends StatelessWidget{
   final _passController = TextEditingController();
   // 账号TextField
   Widget accountTextField() {
-
     return Padding(
         padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 0.0),
         child: TextField(
@@ -61,10 +60,12 @@ class LoginView extends StatelessWidget{
       ),
       onTap: () async {
         if(_photoController.value.text.isNotEmpty && _passController.value.text.isNotEmpty){
-          bool isLogin = await checkLogin(_photoController.value.text, _passController.value.text);
-          globalStateNotifier.changeLoginStatus(isLogin);
+          EasyLoading.show(status: "登录中...");
+          var r = await checkLogin(_photoController.value.text, _passController.value.text);
+          globalStateNotifier.changeLoginStatus(r['isLogin'] as bool, r["loginPhoneNumber"] as String );
+          EasyLoading.dismiss();
         }else{
-          Fluttertoast.showToast(msg: "手机号和密码都必填");
+          EasyLoading.showToast("手机号和密码都必填");
         }
       }
     );

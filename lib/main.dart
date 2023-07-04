@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/common/theme/theme.dart';
 import 'package:shop_app/navigation/my_routes.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.login.path: (context) => LoginView(),
         MyRoutes.root.path: (context) => HomeView()
       },
+      builder: EasyLoading.init(),
     );
   }
 }

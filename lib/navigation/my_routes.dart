@@ -4,7 +4,7 @@ class MyRoutes {
   static MyRoute goodsEdit = MyRoute("/goods/edit", "商品编辑");
   static MyRoute goodsAdd = MyRoute("/goods/add", "新增商品");
   static MyRoute order = MyRoute("/order", "订单管理");
-  static MyRoute swiper = MyRoute("/swiper", "轮播图设置");
+  static MyRoute swiper = MyRoute("/swiper", "首页轮播图设置");
   static MyRoute login = MyRoute("/login", "登录");
 }
 
