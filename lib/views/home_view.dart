@@ -24,7 +24,7 @@ class HomeView extends ViewModelWidget<HomeViewModel> {
             itemCount: viewModel.gridList.length,
             padding: const EdgeInsets.all(16),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount: 3,
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
             ),
@@ -37,18 +37,13 @@ class HomeView extends ViewModelWidget<HomeViewModel> {
                     child: Padding(
                       padding: const EdgeInsets.all(6),
                       child: Center(
-                        child: Text(item.title),
+                        child: Text(item.title, textAlign: TextAlign.center),
                       ),
                     ),
                   )
               );
             }
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => {},
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
-        ), // This trailing comma makes auto-formatting nicer for build methods.
       );
     });
   }
