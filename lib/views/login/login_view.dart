@@ -60,10 +60,8 @@ class LoginView extends StatelessWidget{
       ),
       onTap: () async {
         if(_photoController.value.text.isNotEmpty && _passController.value.text.isNotEmpty){
-          EasyLoading.show(status: "登录中...");
           var r = await checkLogin(_photoController.value.text, _passController.value.text);
           globalStateNotifier.changeLoginStatus(r['isLogin'] as bool, r["loginPhoneNumber"] as String );
-          EasyLoading.dismiss();
         }else{
           EasyLoading.showToast("手机号和密码都必填");
         }
