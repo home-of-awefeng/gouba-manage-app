@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:shop_app/constant/page.dart';
 import 'package:shop_app/mvvm/view_model_widget.dart';
+import 'package:shop_app/navigation/my_routes.dart';
 import 'package:shop_app/views/goods/goods_item_view.dart';
 import 'package:shop_app/views/goods/goods_view_model.dart';
 
@@ -19,7 +19,7 @@ class GoodsView extends ViewModelWidget<GoodsViewModel> {
         viewModel.tabController = DefaultTabController.of(context);
         return Scaffold(
             appBar: AppBar(
-              title: const Text(GOODS_PAGE_NAME),
+              title: Text(MyRoutes.goods.title),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(100),
                 child: Column(
@@ -37,7 +37,7 @@ class GoodsView extends ViewModelWidget<GoodsViewModel> {
               actions: [
                 IconButton(
                     onPressed: () {
-                      viewModel.onPressAddGoods(context);
+                      viewModel.onAddGoods(context);
                     },
                     icon: const Icon(Icons.add)),
               ],
@@ -81,6 +81,10 @@ class GoodsView extends ViewModelWidget<GoodsViewModel> {
                   itemCount: viewModel.goodsList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return GoodsItemView(
+                        onModify: () {
+                          viewModel.onEditGoods(
+                              context, viewModel.goodsList[index]);
+                        },
                         goodsModel: viewModel.goodsList[index]);
                   },
                 )));

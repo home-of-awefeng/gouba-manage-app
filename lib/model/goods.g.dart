@@ -7,7 +7,6 @@ part of 'goods.dart';
 // **************************************************************************
 
 GoodsModel _$GoodsModelFromJson(Map<String, dynamic> json) => GoodsModel(
-      json['version'] as int,
       (json['medias'] as List<dynamic>)
           .map((e) => GoodsMedia.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,7 +22,6 @@ GoodsModel _$GoodsModelFromJson(Map<String, dynamic> json) => GoodsModel(
 
 Map<String, dynamic> _$GoodsModelToJson(GoodsModel instance) =>
     <String, dynamic>{
-      'version': instance.version,
       'medias': instance.medias,
       'tags': instance.tags,
       'price': instance.price,
@@ -36,12 +34,14 @@ Map<String, dynamic> _$GoodsModelToJson(GoodsModel instance) =>
     };
 
 GoodsMedia _$GoodsMediaFromJson(Map<String, dynamic> json) => GoodsMedia(
-      json['url'] as String,
       json['type'] as String,
+      json['url'] as String,
+      json['fileId'] as String,
     );
 
 Map<String, dynamic> _$GoodsMediaToJson(GoodsMedia instance) =>
     <String, dynamic>{
       'type': instance.type,
       'url': instance.url,
+      'fileId': instance.fileId,
     };

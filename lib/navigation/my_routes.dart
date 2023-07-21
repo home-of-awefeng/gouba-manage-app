@@ -8,7 +8,7 @@ class MyRoutes {
   static MyRoute login = MyRoute("/login", "登录");
 }
 
-class MyRoute{
+class MyRoute {
   final String path;
   final String title;
   MyRoute(this.path, this.title);

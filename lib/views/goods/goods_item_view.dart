@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/model/goods.dart';
 
 class GoodsItemView extends StatelessWidget {
+  final Function onModify;
   GoodsModel goodsModel;
-  GoodsItemView({super.key, required this.goodsModel});
+  GoodsItemView({super.key, required this.goodsModel, required this.onModify});
 
   Widget getImageOrVideo(GoodsModel goods) {
     GoodsMedia media = goods.medias.first;
@@ -46,9 +47,10 @@ class GoodsItemView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextButton(
-                      child: const Text("修改"),
-                      onPressed: () {},
-                    ),
+                        child: const Text("修改"),
+                        onPressed: () {
+                          onModify();
+                        }),
                   )
                 ],
               ),
