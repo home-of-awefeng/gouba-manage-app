@@ -48,3 +48,24 @@ Future<GoodsRes> getGoodsList(
   }
   return r;
 }
+
+Future<GoodsModel?> getGoodsDetail(int id) async {
+  EasyLoading.show(status: "加载中，请稍等...", maskType: EasyLoadingMaskType.black);
+  GoodsModel? goodsModel;
+  try {
+    var res = await dio.get("/api/goodsInfo", queryParameters: {"id": id});
+    ApiResponse<GoodsModel> result = ApiResponse.fromJson(res.data, (json) {
+      return GoodsModel.fromJson(json as Map<String, dynamic>);
+    });
+    if (result.code == 200) {
+      EasyLoading.dismiss();
+      goodsModel = result.data!;
+    } else {
+      throw Exception(result.message);
+    }
+  } catch (e) {
+    EasyLoading.dismiss();
+    EasyLoading.showError(e.toString());
+  }
+  return goodsModel;
+}

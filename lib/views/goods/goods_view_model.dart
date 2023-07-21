@@ -145,9 +145,14 @@ class GoodsViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void onPressAddGoods(BuildContext context) {
+  void onAddGoods(BuildContext context) {
     Navigator.pushNamed(context, MyRoutes.goodsAdd.path,
         arguments: {"type": "add"});
+  }
+
+  void onEditGoods(BuildContext context, GoodsModel goods) {
+    Navigator.pushNamed(context, MyRoutes.goodsEdit.path,
+        arguments: {"type": "edit", "id": goods.id});
   }
 
   @override

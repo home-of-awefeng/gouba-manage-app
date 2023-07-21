@@ -4,7 +4,6 @@ part 'goods.g.dart';
 
 @JsonSerializable()
 class GoodsModel {
-  int version;
   List<GoodsMedia> medias;
   List<String> tags;
   String price;
@@ -15,8 +14,8 @@ class GoodsModel {
   int classify;
   int status;
 
-  GoodsModel(this.version, this.medias, this.tags, this.price, this.inventory,
-      this.title, this.desc, this.id, this.classify, this.status);
+  GoodsModel(this.medias, this.tags, this.price, this.inventory, this.title,
+      this.desc, this.id, this.classify, this.status);
 
   factory GoodsModel.fromJson(Map<String, dynamic> json) =>
       _$GoodsModelFromJson(json);
@@ -27,7 +26,8 @@ class GoodsModel {
 class GoodsMedia {
   String type;
   String url;
-  GoodsMedia(this.url, this.type);
+  String fileId;
+  GoodsMedia(this.type, this.url, this.fileId);
 
   factory GoodsMedia.fromJson(Map<String, dynamic> json) =>
       _$GoodsMediaFromJson(json);
